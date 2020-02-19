@@ -106,9 +106,12 @@ export class WidgetDetailComponent implements OnInit {
     this.form = this.fb.group({
       id: 0,
       title: ['', Validators.required],
-      date: [new Date('1000-01-01T00:00:00'), Validators.required],
+      date: [new Date('2021-02-03T00:00:00'), Validators.required],
       price: ['', Validators.required],
-      description: ['<ol><li>test</li><li>123</li></ol>']
+      // jdg: For testing Quill
+      // description: ['<ol><li>test</li><li>123</li></ol>']
+      description: ['A New widget!']
+
 
     });
 
@@ -139,7 +142,6 @@ export class WidgetDetailComponent implements OnInit {
       try {
         // string, the in-memory array is an int, so convert
         const widgetId: number = parseInt(this.currentId);  // Extracts member id 
-        // console.log("DIAG: WidgetDetailComponent:ngOnInit(), passed id", this.currentId, " ", widgetId);
         // if we get a 0, it's a new record.
         // note this is data dependant!
         // TTD: add a flag for new.
